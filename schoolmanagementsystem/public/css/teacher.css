@@ -1,0 +1,64 @@
+.teacher-card {
+    border: none;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.teacher-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Card Header Styling */
+.teacher-card-header {
+    background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+    color: white;
+    padding: 1rem 1.25rem;
+    border-bottom: none;
+}
+
+.teacher-card-header h5 {
+    font-weight: 600;
+    margin-bottom: 0;
+}
+
+.teacher-card-body {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding: 1.5rem;
+}
+
+.teacher-icon {
+    font-size: 2.5rem;
+    color: #4f46e5;
+}
+
+.teacher-title {
+    margin-top: 1rem;
+    font-weight: 600;
+    color: #2d3748;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .teacher-card-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .teacher-card-header a {
+        margin-top: 10px;
+        width: 100%;
+    }
+
+    .teacher-list-card-body {
+        padding: 1.25rem;
+    }
+}
