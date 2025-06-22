@@ -55,9 +55,9 @@
                             </td>
                         </tr>
                     @else
-                        @foreach ($students as $student)
+                        @foreach ($students as $index => $student)
                             <tr>
-                                <td class="text-center">{{ $loop->iteration }}</td>
+                                <td class="text-center">{{ $students->firstItem() + $index }}</td>
                                 <td>{{ $student->register_no }}</td>
                                 <td>{{ $student->student_name }}</td>
                                 <td class="text-center">{{ $student->grade->grade }}</td>
@@ -101,6 +101,7 @@
                     @endif
                 </tbody>
             </table>
+            {{ $students->links() }}
         </div>
     </div>
 @endsection

@@ -36,30 +36,19 @@
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="academicDropdown">
                             <li><a class="dropdown-item" href="#">Library</a></li>
-                            <li><a class="dropdown-item" href="#">Counseling</a></li>
+                            <li><a class="dropdown-item" href="#">Counselling</a></li>
                             <li><a class="dropdown-item" href="#">Tutoring</a></li>
-                        </ul>
-                    </li>
-
-                    <!-- Opportunities Dropdown -->
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="opportunitiesDropdown" role="button"
-                            data-bs-toggle="dropdown" aria-expanded="false">
-                            Opportunities
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="opportunitiesDropdown">
-                            <li><a class="dropdown-item" href="#levels">Scholarships</a></li>
-                            <li><a class="dropdown-item" href="#levels">Internships</a></li>
-                            <li><a class="dropdown-item" href="#levels">Events</a></li>
                         </ul>
                     </li>
 
                     <li class="nav-item">
                         <a class="nav-link" href="#">About Us</a>
                     </li>
-
                     <li class="nav-item">
-                        <a class="nav-link" href="#footer">Contact</a>
+                        <a class="nav-link" href="{{ route('login') }}">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('register') }}">Register</a>
                     </li>
                 </ul>
             </div>
@@ -150,8 +139,8 @@
             <div class="row align-items-start">
                 <!-- Level Image -->
                 <div class="col-md-4 text-center">
-                    <img id="level-image" src="{{ asset('images/levels/kg.jpg') }}"
-                        class="img-fluid rounded shadow-sm" alt="Level Image" style="max-height: 250px;">
+                    <img id="level-image" src="{{ asset('images/levels/kg.jpg') }}" class="img-fluid rounded shadow-sm"
+                        alt="Level Image" style="max-height: 250px;">
                 </div>
                 <!-- Level Buttons -->
                 <div class="col-md-8 d-flex justify-content-center justify-content-md-end">
@@ -334,7 +323,6 @@
                     <ul class="list-unstyled">
                         <li>Exam Info</li>
                         <li>Academic Calendar</li>
-                        <li><a href="{{ route('login') }}">Student Login</a></li>
                     </ul>
                 </div>
             </div>

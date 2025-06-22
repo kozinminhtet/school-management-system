@@ -26,6 +26,7 @@
                         <i class="fas fa-plus-circle me-1"></i> Create
                     </a>
                 @endif
+
                 <a href="{{ route('teachers.dashboard') }}" class="btn btn-outline-secondary">
                     Back
                 </a>
@@ -34,8 +35,8 @@
 
         {{-- Table --}}
         <div class="table-responsive">
-            <table class="table teacher-list-table table-striped table-hover table-bordered align-middle">
-                <thead class="table-primary text-center">
+            <table class="table table-striped table-hover table-bordered align-middle">
+                <thead class="text-center">
                     <tr>
                         <th>No</th>
                         <th>Name</th>
@@ -58,7 +59,7 @@
                     @else
                         @foreach ($teachers as $index => $teacher)
                             <tr>
-                                <td class="text-center">{{ $index + 1 }}</td>
+                                <td class="text-center">{{ $teachers->firstItem() + $index }}</td>
                                 <td>{{ $teacher->teacher_name }}</td>
                                 <td>{{ $teacher->position ? $teacher->position->position_name : '-' }}</td>
                                 <td>{{ $teacher->education }}</td>
@@ -92,9 +93,9 @@
                                         <i class="fas fa-user-circle student-photo"></i>
                                     @endif
                                 </td>
-                                <td>
+                                <td class="text-center">
                                     @if (auth()->user()->hasRole('admin'))
-                                        <div class="d-flex gap-2">
+                                        <div class="d-flex gap-2 justify-content-center">
                                             <a href="{{ route('teachers.edit', $teacher->id) }}"
                                                 class="btn btn-sm btn-warning">
                                                 <i class="fas fa-edit me-1"></i>Edit
@@ -113,6 +114,7 @@
                     @endif
                 </tbody>
             </table>
+            {{ $teachers->links() }}
         </div>
 
     </div>
