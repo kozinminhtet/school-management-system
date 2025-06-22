@@ -28,7 +28,7 @@ class TeacherController extends Controller
     public function teacherList()
     {
         $position = Position::all();
-        $teachers = Teacher::all();
+        $teachers = Teacher::paginate(5);
         return view('teachers.teacherList', compact('teachers', 'position'));
     }
 

@@ -25,7 +25,7 @@ class StudentController extends Controller
 
     public function studentList()
     {
-        $students = Student::all();
+        $students = Student::paginate(3);
         return view('students.studentList', compact('students'));
     }
 

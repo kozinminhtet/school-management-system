@@ -103,14 +103,16 @@
                                         @endphp
                                         <td class="{{ $status['class'] }}">{{ $status['text'] }}</td>
                                         <td>
-                                            <a href="#" data-type="mark"
-                                                class="btn edit-btn btn-success btn-sm open-modal"
-                                                data-id="{{ $mrc->id }}" data-myan="{{ $mrc->myan }}"
-                                                data-eng="{{ $mrc->eng }}" data-maths="{{ $mrc->maths }}"
-                                                data-geog="{{ $mrc->geog }}" data-hist="{{ $mrc->hist }}"
-                                                data-science="{{ $mrc->science }}" data-month="{{ $mrc->month }}">
-                                                <i class="fas fa-pen me-1"></i> Edit
-                                            </a>
+                                            @if (auth()->user()->hasRole('teacher'))
+                                                <a href="#" data-type="mark"
+                                                    class="btn edit-btn btn-success btn-sm open-modal"
+                                                    data-id="{{ $mrc->id }}" data-myan="{{ $mrc->myan }}"
+                                                    data-eng="{{ $mrc->eng }}" data-maths="{{ $mrc->maths }}"
+                                                    data-geog="{{ $mrc->geog }}" data-hist="{{ $mrc->hist }}"
+                                                    data-science="{{ $mrc->science }}" data-month="{{ $mrc->month }}">
+                                                    <i class="fas fa-pen me-1"></i> Edit
+                                                </a>
+                                            @endif
                                             <a href="{{ route('students.markDelete', $mrc->id) }}"
                                                 class="btn delete-btn btn-danger btn-sm">
                                                 <i class="fas fa-trash me-1"></i> Del

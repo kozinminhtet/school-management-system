@@ -80,11 +80,11 @@ footer h5 {
 }
 
 /* Common table styles */
-.table-responsive {
+/* .table-responsive {
     border-radius: 12px;
     overflow: hidden;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-}
+} */
 
 table.table {
     border-collapse: collapse;
@@ -127,12 +127,6 @@ table tbody td {
     text-align: center;
 }
 
-/* Student-specific table */
-.table-student th,
-.table-student td {
-    vertical-align: middle;
-}
-
 /* Student photo */
 .photo {
     width: 45px;
@@ -145,11 +139,6 @@ table tbody td {
 .btn-sm i,
 .btn i {
     margin-right: 3px;
-}
-
-/* Alert spacing */
-.alert {
-    margin-bottom: 20px;
 }
 
 /* Fix button spacing */
@@ -187,10 +176,6 @@ th {
 .text-muted {
     font-style: italic;
     font-size: 0.95rem;
-}
-
-/* Empty State Styling */
-.text-muted {
     color: #64748b !important;
     padding: 20px !important;
 }
