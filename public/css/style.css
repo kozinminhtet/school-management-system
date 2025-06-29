@@ -1,191 +1,644 @@
+/* Color Variables */
+:root {
+    --primary-color: #2c3e50; /* Dark blue */
+    --secondary-color: #3498db; /* Bright blue */
+    --accent-color: #e74c3c; /* Red */
+    --light-color: #ecf0f1; /* Light gray */
+    --dark-color: #2c3e50; /* Dark blue */
+    --text-color: #333; /* Dark gray */
+    --text-light: #7f8c8d; /* Medium gray */
+    --white: #fff;
+    --black: #000;
+}
+
+html,
 body {
-    font-family: "Segoe UI", sans-serif;
+    overflow-x: hidden;
 }
 
-section h3 {
-    font-weight: bold;
+/* Base Styles */
+body {
+    font-family: "Poppins", "Noto Sans Myanmar", sans-serif;
+    color: var(--text-color);
+    line-height: 1.6;
+}
+/* Navbar */
+.frontend-navbar {
+    background-color: var(--primary-color) !important;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 15px 0;
 }
 
-footer h5 {
-    margin-bottom: 10px;
+.frontend-navbar .navbar-brand {
+    font-weight: 700;
+    font-size: 1.8rem;
+    color: var(--white) !important;
 }
 
-.school-header {
-    height: 90vh;
-    background-size: cover;
-    background-position: center;
+.frontend-navbar .navbar-brand span {
+    color: var(--secondary-color);
+}
+
+.frontend-navbar .nav-link {
+    font-weight: 500;
+    padding: 8px 15px !important;
+    margin: 0 5px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.frontend-navbar .nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
+}
+
+.frontend-navbar .dropdown-menu {
+    border: none;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.frontend-navbar .dropdown-item {
+    padding: 8px 20px;
+    transition: all 0.3s ease;
+}
+
+.frontend-navbar .dropdown-item:hover {
+    background-color: var(--secondary-color);
+    color: var(--white);
+    padding-left: 25px;
+}
+
+/* Carousel control button styles */
+.carousel-control-prev,
+.carousel-control-next {
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50px;
+    height: 50px;
+    opacity: 0.9;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-size: 60% 60%;
+    background-color: #000000cc;
+    border-radius: 50%;
+    padding: 15px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.carousel-control-prev-icon:hover,
+.carousel-control-next-icon:hover {
+    background-color: #ffffffcc;
+    transform: scale(1.1);
+    filter: invert(1);
+}
+
+/* Sections */
+.frontend-section {
+    padding: 10px 0;
+}
+
+.frontend-section-title {
     position: relative;
+    display: inline-block;
+    margin: 0 auto 50px;
+    padding-bottom: 15px;
+    font-weight: 600;
 }
 
-.school-header .overlay {
+.frontend-section-title::after {
+    content: "";
     position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* dark overlay */
-    z-index: 0;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: linear-gradient(
+        to right,
+        var(--secondary-color),
+        var(--accent-color)
+    );
 }
 
-.school-header .z-1 {
+.frontend-subtitle {
+    color: var(--primary-color);
+    font-weight: 700;
+    margin-bottom: 30px;
     position: relative;
-    z-index: 1;
+    padding-bottom: 15px;
 }
 
-.fixed-image {
-    width: 100%;
-    max-width: 500px; /* adjust this as needed */
-    height: auto; /* or set a specific height if you want */
+.frontend-subtitle::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(
+        to right,
+        var(--secondary-color),
+        var(--accent-color)
+    );
+}
+
+.frontend-text {
+    color: var(--text-color);
+    margin-bottom: 1rem;
+}
+
+/* Feature Boxes */
+.frontend-feature-box {
+    display: flex;
+    margin-bottom: 1.5rem;
+}
+
+.frontend-feature-icon {
+    margin-right: 1rem;
+}
+
+.frontend-feature-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+    color: var(--primary-color);
+}
+
+.frontend-feature-text {
+    color: var(--text-light);
+    font-size: 0.9rem;
+    margin-bottom: 0;
+}
+
+/* Image Boxes */
+.frontend-image-box {
+    position: relative;
+}
+
+.frontend-image {
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    transition: transform 0.5s ease;
+}
+
+.frontend-image:hover {
+    transform: scale(1.03);
+}
+
+.frontend-image-badge {
+    position: absolute;
+    bottom: 1rem;
+    left: 1rem;
+}
+
+/* Level Links */
+.frontend-level-link {
+    transition: all 0.3s ease;
+    text-align: left;
+    padding: 12px 20px;
+    border-radius: 8px !important;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 0.5rem;
     display: block;
-    margin: 0 auto; /* center it horizontally if needed */
+    width: 60%;
 }
 
-.activity-img,
-.facility-img {
+.frontend-level-link::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 5px;
+    background-color: var(--secondary-color);
+    transition: all 0.3s ease;
+}
+
+.frontend-level-link:hover::before {
+    width: 8px;
+    background-color: var(--white);
+}
+
+/* Accordion */
+.frontend-accordion-item {
+    margin-bottom: 1rem;
+    border-radius: 8px !important;
+    overflow: hidden;
+}
+
+.frontend-accordion-button {
+    background-color: var(--light-color);
+    font-weight: 500;
+    padding: 0.85rem 1.25rem;
+    border-radius: 5px !important;
+}
+
+.frontend-accordion-button:not(.collapsed) {
+    background-color: var(--light-color);
+    color: var(--primary-color);
+}
+
+.frontend-accordion-body {
+    padding: 1rem 1.25rem;
+}
+
+/* Teaching Methodology Styles */
+.methodology-icon {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+}
+
+.methodology-title {
+    font-size: 1.1rem;
+    color: var(--primary-color);
+    margin-bottom: 0.25rem;
+}
+
+.methodology-text {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    margin-bottom: 0;
+}
+
+/* Images */
+.frontend-image-container {
+    margin-bottom: 1rem;
+}
+
+.frontend-facility-image,
+.frontend-activity-image {
+    transition: all 0.3s ease;
     height: 200px;
     object-fit: cover;
     width: 100%;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.activity-img:hover,
-.facility-img:hover {
-    transform: scale(1.03);
-    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
-}
-
-.caption {
-    text-align: center;
-    font-weight: 500;
-    margin-top: 0.5rem;
-    color: #333;
-}
-
-.student-photo {
-    width: 60px;
-    height: 60px; /* Circle height */
-    border-radius: 50%; /* Make it circular */
-    object-fit: cover; /* Crop the image to fit the circle */
-    display: inline-block; /* Align both icon and image similarly */
-}
-
-/* Optional: Adjust color for the Font Awesome icon */
-.student-photo.fas {
-    font-size: 60px; /* Ensure icon size matches the circle */
-    color: #adb5bd; /* Light gray for the icon when no image */
-}
-
-.text-purple {
-    color: purple !important;
-}
-
-/* Common table styles */
-/* .table-responsive {
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-} */
-
-table.table {
-    border-collapse: collapse;
-    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 15px;
     border-radius: 8px;
-    overflow: hidden;
 }
 
-table thead th {
-    background: linear-gradient(to right, #4e73df, #224abe);
-    color: white;
-    padding: 12px;
-    vertical-align: middle;
-    text-transform: uppercase;
-    font-size: 14px;
-    letter-spacing: 0.5px;
+.frontend-facility-image:hover,
+.frontend-activity-image:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
-table tbody td {
-    background-color: #fff;
-    padding: 10px;
-    vertical-align: middle;
-    border-bottom: 1px solid #dee2e6;
-}
-
-.table-hover tbody tr:hover {
-    background-color: #f1f3f5;
-}
-
-.badge {
-    font-size: 12px;
-    padding: 5px 8px;
-    border-radius: 6px;
-}
-
-/* Teacher-specific table */
-.teacher-list-table th,
-.teacher-list-table td {
+.frontend-image-caption {
     text-align: center;
+    margin-top: 0.5rem;
+    font-weight: 500;
+    color: var(--primary-color);
 }
 
-/* Student photo */
-.photo {
-    width: 45px;
-    height: 45px;
-    object-fit: cover;
-    border-radius: 50%;
+/* Testimonials */
+.frontend-testimonials-section {
+    background-color: #f0f8ff;
 }
 
-/* Action buttons */
-.btn-sm i,
-.btn i {
-    margin-right: 3px;
-}
-
-/* Fix button spacing */
-.table td .btn {
-    padding: 5px 10px;
-    font-size: 14px;
-}
-
-/* Optional: spacing between columns */
-td,
-th {
-    padding-left: 10px;
-    padding-right: 10px;
-}
-
-/* Admin action buttons */
-.btn-sm {
-    padding: 4px 8px;
-    font-size: 0.8rem;
-}
-
-.btn-warning {
-    color: #fff;
-    background-color: #f6c23e;
+.frontend-testimonial-card {
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
     border: none;
+    transition: all 0.3s ease;
 }
 
-.btn-danger {
-    color: #fff;
-    background-color: #e74a3b;
-    border: none;
+.frontend-testimonial-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
 }
 
-/* No record message */
-.text-muted {
+.frontend-testimonial-body {
+    padding: 1.5rem;
+}
+
+.frontend-rating {
+    color: #f39c12;
+}
+
+.frontend-testimonial-text {
     font-style: italic;
-    font-size: 0.95rem;
-    color: #64748b !important;
-    padding: 20px !important;
+    margin-bottom: 0;
+}
+
+.frontend-testimonial-footer {
+    padding: 1rem 1.5rem;
+    background-color: rgba(0, 0, 0, 0.02);
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.frontend-testimonial-author {
+    display: flex;
+    align-items: center;
+}
+
+/* CTA Section */
+.frontend-cta-section {
+    padding: 60px 0;
+}
+
+.frontend-cta-title {
+    font-weight: 700;
+}
+
+.frontend-cta-text {
+    opacity: 0.9;
+}
+
+/* Footer */
+.frontend-footer {
+    background-color: var(--primary-color);
+    padding: 50px 0 20px;
+    color: var(--white);
+}
+
+.frontend-footer-brand {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    color: var(--white);
+}
+
+.frontend-footer-brand span {
+    color: var(--secondary-color);
+}
+
+.frontend-footer-heading {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    color: var(--secondary-color);
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.frontend-footer-heading::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 40px;
+    height: 2px;
+    background-color: var(--secondary-color);
+}
+
+.frontend-footer-text {
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 1rem;
+}
+
+.frontend-footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.frontend-footer-links li {
+    margin-bottom: 0.75rem;
+}
+
+.frontend-footer-links a {
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.frontend-footer-links a:hover {
+    color: var(--secondary-color);
+    padding-left: 5px;
+}
+
+.frontend-contact-info {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.frontend-contact-info li {
+    margin-bottom: 1rem;
+    color: rgba(255, 255, 255, 0.7);
+    display: flex;
+    align-items: flex-start;
+}
+
+.frontend-contact-info i {
+    margin-top: 3px;
+}
+
+.frontend-social-icons a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: var(--white);
+    margin-right: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.frontend-social-icons a:hover {
+    background-color: var(--secondary-color);
+    transform: translateY(-3px);
+}
+
+.frontend-footer-divider {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    margin: 2rem 0;
+}
+
+.frontend-copyright {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 0.9rem;
+}
+
+.frontend-footer-link {
+    color: rgba(255, 255, 255, 0.5);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.frontend-footer-link:hover {
+    color: var(--secondary-color);
+}
+
+/* Back to Top Button */
+.frontend-back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background-color: var(--secondary-color);
+    color: var(--white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    z-index: 99;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    text-decoration: none;
+}
+
+.frontend-back-to-top.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.frontend-back-to-top:hover {
+    background-color: var(--primary-color);
+    transform: translateY(-5px);
+}
+
+/* Buttons */
+.btn-primary {
+    background-color: var(--secondary-color);
+    border-color: var(--secondary-color);
+    padding: 10px 25px;
+    border-radius: 30px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #2980b9;
+    border-color: #2980b9;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(41, 128, 185, 0.3);
+}
+
+.btn-outline-primary {
+    color: var(--secondary-color);
+    border-color: var(--secondary-color);
+    transition: all 0.3s ease;
+}
+
+.btn-outline-primary:hover {
+    background-color: var(--secondary-color);
+    color: var(--white);
+}
+
+/* Animations */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.floating {
+    animation: floating 3s ease-in-out infinite;
+}
+
+@keyframes floating {
+    0%,
+    100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 992px) {
+    .frontend-carousel-title {
+        font-size: 2rem;
+    }
+
+    .frontend-carousel-text {
+        font-size: 1.1rem;
+    }
+
+    .frontend-section {
+        padding: 30px 0;
+    }
 }
 
 @media (max-width: 768px) {
-    .curriculum-cards {
-        flex-direction: column;
-        gap: 1rem;
+    .carousel-control-prev,
+    .carousel-control-next {
+        width: 40px;
+        height: 40px;
     }
-    .curriculum-cards .card {
-        width: 100% !important;
+
+    .carousel-control-prev-icon,
+    .carousel-control-next-icon {
+        padding: 10px;
+        background-size: 70% 70%;
+    }
+
+    .frontend-carousel-content {
+        padding: 1.5rem !important;
+    }
+
+    .frontend-carousel-icon i {
+        font-size: 2rem !important;
+    }
+
+    .btn-lg {
+        font-size: 1rem;
+        padding: 0.6rem 1.2rem;
+    }
+
+    .frontend-section {
+        padding: 25px 0;
+    }
+
+    .frontend-subtitle {
+        font-size: 1.5rem;
+    }
+
+    .methodology-icon {
+        margin: 0 auto 0.5rem;
+    }
+}
+
+@media (max-width: 576px) {
+    /* .frontend-carousel-item {
+        padding: 20px 0;
+    } */
+
+    .frontend-carousel-content {
+        padding: 2rem !important;
+    }
+
+    .frontend-carousel-title {
+        font-size: 1.5rem;
+    }
+}
+@media (max-width: 370px) {
+    .navbar .container {
+        max-width: 100%;
+        padding: 0 10px;
+    }
+
+    .frontend-padding {
+        padding: 10px;
     }
 }

@@ -11,7 +11,7 @@
                     <div class="mb-3">
                         <label for="name" class="form-label">{{ __('Name') }}</label>
                         <input id="name" type="text" class="form-control @error('name') is-invalid @enderror"
-                            name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+                            name="name" value="{{ old('name') }}" autocomplete="name" autofocus>
                         @error('name')
                             <div class="invalid-feedback">{{ $message }}</div>
                         @enderror
@@ -20,7 +20,7 @@
                     <div class="mb-3">
                         <label for="email" class="form-label">Email Address</label>
                         <input id="email" type="email" class="form-control @error('email') is-invalid @enderror"
-                            name="email" value="{{ old('email') }}" required autocomplete="email">
+                            name="email" value="{{ old('email') }}" autocomplete="email">
                         @error('email')
                             <div class="invalid-feedback">{{ $message }}</div>
                         @enderror
@@ -31,8 +31,7 @@
                         @foreach ($roles as $role)
                             <div class="form-check">
                                 <input class="form-check-input" type="radio" name="role_id" value="{{ $role->id }}"
-                                    id="role{{ ucfirst($role->name) }}" {{ old('role_id') == $role->id ? 'checked' : '' }}
-                                    required>
+                                    id="role{{ ucfirst($role->name) }}" {{ old('role_id') == $role->id ? 'checked' : '' }}>
                                 <label class="form-check-label" for="role{{ ucfirst($role->name) }}">
                                     {{ ucfirst($role->name) }}
                                 </label>
@@ -46,7 +45,7 @@
                     <div class="mb-3">
                         <label for="password" class="form-label">Password</label>
                         <input id="password" type="password" class="form-control @error('password') is-invalid @enderror"
-                            name="password" required autocomplete="new-password">
+                            name="password" autocomplete="new-password">
                         @error('password')
                             <div class="invalid-feedback">{{ $message }}</div>
                         @enderror
@@ -55,7 +54,7 @@
                     <div class="mb-4">
                         <label for="password-confirm" class="form-label">{{ __('Confirm Password') }}</label>
                         <input id="password-confirm" type="password" class="form-control" name="password_confirmation"
-                            required autocomplete="new-password">
+                            autocomplete="new-password">
                     </div>
 
                     <div class="d-grid">
